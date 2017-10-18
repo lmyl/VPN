@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0819D52F1F9637DF00ACEC08 /* IKEv2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819D52E1F9637DF00ACEC08 /* IKEv2.swift */; };
 		088A26FE1F95ADDF0082CC72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A26FD1F95ADDF0082CC72 /* AppDelegate.swift */; };
 		088A27001F95ADDF0082CC72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A26FF1F95ADDF0082CC72 /* ViewController.swift */; };
 		088A27031F95ADDF0082CC72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 088A27011F95ADDF0082CC72 /* Main.storyboard */; };
 		088A27051F95ADDF0082CC72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 088A27041F95ADDF0082CC72 /* Assets.xcassets */; };
 		088A27081F95ADDF0082CC72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 088A27061F95ADDF0082CC72 /* LaunchScreen.storyboard */; };
+		088A27121F95ADEC0082CC72 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 088A27111F95ADEC0082CC72 /* NetworkExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0819D52E1F9637DF00ACEC08 /* IKEv2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKEv2.swift; sourceTree = "<group>"; };
 		088A26FA1F95ADDF0082CC72 /* VPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		088A26FD1F95ADDF0082CC72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		088A26FF1F95ADDF0082CC72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,8 @@
 		088A27041F95ADDF0082CC72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		088A27071F95ADDF0082CC72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		088A27091F95ADDF0082CC72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		088A270F1F95ADE60082CC72 /* VPN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VPN.entitlements; sourceTree = "<group>"; };
+		088A27111F95ADEC0082CC72 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				088A27121F95ADEC0082CC72 /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +46,7 @@
 			children = (
 				088A26FC1F95ADDF0082CC72 /* VPN */,
 				088A26FB1F95ADDF0082CC72 /* Products */,
+				088A27101F95ADEC0082CC72 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +61,24 @@
 		088A26FC1F95ADDF0082CC72 /* VPN */ = {
 			isa = PBXGroup;
 			children = (
+				088A270F1F95ADE60082CC72 /* VPN.entitlements */,
 				088A26FD1F95ADDF0082CC72 /* AppDelegate.swift */,
 				088A26FF1F95ADDF0082CC72 /* ViewController.swift */,
+				0819D52E1F9637DF00ACEC08 /* IKEv2.swift */,
 				088A27011F95ADDF0082CC72 /* Main.storyboard */,
 				088A27041F95ADDF0082CC72 /* Assets.xcassets */,
 				088A27061F95ADDF0082CC72 /* LaunchScreen.storyboard */,
 				088A27091F95ADDF0082CC72 /* Info.plist */,
 			);
 			path = VPN;
+			sourceTree = "<group>";
+		};
+		088A27101F95ADEC0082CC72 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				088A27111F95ADEC0082CC72 /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +114,14 @@
 					088A26F91F95ADDF0082CC72 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.VPNLite = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -137,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				088A27001F95ADDF0082CC72 /* ViewController.swift in Sources */,
+				0819D52F1F9637DF00ACEC08 /* IKEv2.swift in Sources */,
 				088A26FE1F95ADDF0082CC72 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +300,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VPN/VPN.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C9LLPH449N;
 				INFOPLIST_FILE = VPN/Info.plist;
@@ -289,6 +316,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VPN/VPN.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C9LLPH449N;
 				INFOPLIST_FILE = VPN/Info.plist;
